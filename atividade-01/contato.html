@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 01</title>
+    <link rel="stylesheet" href="css/estilo.css"> <!--CSS externo-->
+    <style>
+        input{
+            width: 30%;
+        }
+        textarea{
+            width: 30%;
+            max-width: 30%;
+            height: auto;
+        }
+        #submit{
+            width: 8%;
+            background-color: #949494;
+            border-style: none;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-left: 2%;
+        }
+        #title_form{
+            margin-left: 2%;
+        }
+        textarea{
+            width: auto;
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Contato</h1>
+        <hr size="30px" color="#4f4f4f">
+        <section>
+            <figure id="logo_block">
+                <img src="img/kungfu_fight_logo.jpg" alt="kungfu_fight_logo" id="logo">
+            </figure>
+            <nav>
+                <a href="index.html">Home</a> |
+                <a href="sobre.html">Quem somos</a>
+            </nav>
+        </section>
+    </header>
+
+    <section>
+        <h1 id="title_form">Entre em contato:</h1>
+    </section>
+    <hr>
+    <section>
+        <form>
+            <label>Seu E-mail:</label>
+            <input type="email" name="email" required>
+            <label>Assunto:</label>
+            <input type="text" name="assunto" required>
+            <label>Descrição:</label>
+            <textarea name="descricao"></textarea>
+            <input type="submit" value="Enviar" id="submit" required>
+        </form>
+    </section>
+
+    <footer><p>Todos os direitos reservados.</p><p>Desenvolvido por Arthur Óliver Rossi Alves.</p></footer>
+</body>
+
+</html>
