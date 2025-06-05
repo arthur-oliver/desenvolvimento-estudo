@@ -1,0 +1,51 @@
+LISTA 3
+
+• EXERCÍCIO 1:
+
+nota = int(input('Digite uma nota (entre 0 e 10): '))
+if 0<=nota<=10:
+    print('Nota válida!')
+else:
+    print('Nota inválida!')
+
+• EXERCÍCIO 2:
+
+nome = str(input('Digite o nome de usuário: '))
+senha = str(input('Digite a senha de usuário: '))
+while nome==senha:
+    print('Senha inválida!\nDigite uma senha diferente do nome do usuário.')
+    senha = str(input('Digite a senha de usuário: '))
+print('Senha válida!')
+
+• EXERCÍCIO 3:
+
+a = int(80000)
+b = int(200000)
+ano=0
+
+while a < b:
+    ca=a*0.03
+    a=a+ca
+    cb=b*1.5/100
+    b=b+cb
+    ano=ano+1
+print(f'{ano} anos.')
+
+• EXERCÍCIO 4:
+
+n = int(input('Digite um valor: '))
+a,b = 1,1
+k=1
+while k<=n-2:
+    a,b = b,a +b
+    k=k+1
+print(b)
+
+• EXERCÍCIO 5:
+
+#Algoritmo de Euclides
+n1 = int(input('Digite um número: '))
+n2 = int(input('Digite outro número: '))
+while n1%n2!=0:
+    n1,n2=n2,n1%n2
+print(f'MDC = {n2}')

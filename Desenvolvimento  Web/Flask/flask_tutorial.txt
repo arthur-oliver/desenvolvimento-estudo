@@ -1,0 +1,70 @@
+FLASK
+
+• ISTALANDO AMBIENTE VIRTUAL:
+python -m venv venv (terminal)
+
+OBS:
+-m = make (fazer/criar)
+1º venv = ambiente virtual
+2º venv = nome do ambiente virtual
+
+
+-------------------------------------------------------------------------------------------------------
+
+
+• ATIVANDO AMBIENTE VIRTUAL:
+.\venv\Scripts\activate (terminal)
+
+
+-------------------------------------------------------------------------------------------------------
+
+
+• INSTALANDO FLASK:
+pip list (para ver as possibilidades de instalção - opcional)
+pip install flask
+
+
+-------------------------------------------------------------------------------------------------------
+
+
+• CRIANDO UM ARQUIVO TXT "requeriments" COM TODAS AS DEPENDÊNCIAS INSTALADAS NO AMBIENTE VIRTUAL:
+pip freeze > requirements.txt (terminal)
+
+
+-------------------------------------------------------------------------------------------------------
+
+
+• INSTALANDO AS DEPENDÊNCIAS DE UM OUTRO PROJETO:
+pip install -r .\requirements.txt (terminal)
+
+OBS:
+-r = recursividade (função/sub-rotina)
+
+
+-------------------------------------------------------------------------------------------------------
+
+
+• VERIFICANDO ARQUIVOS:
+ls
+
+-------------------------------------------------------------------------------------------------------
+
+
+• CRIANDO UMA APLICAÇÃO SIMPLES:
+app.py (padrão)
+wsgi.py (padrão)
+
+-------------------------------------------------------------------------------------------------------
+
+
+• PARA RODAR "app.py":
+flask run (terminal)
+
+• PARA RODAR SIMULTANEAMENTE "app.py":
+flask run --debug (terminal)
+
+• PARA RODAR SERVIDOR PÚBLICO "app.py":
+flask run --debug --host=0.0.0.0 (terminal)
+
+OBS:
+Para "derrubar" a sessão debug: Ctrl C (terminal)	

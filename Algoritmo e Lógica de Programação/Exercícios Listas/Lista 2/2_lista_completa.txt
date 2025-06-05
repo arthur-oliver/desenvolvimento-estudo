@@ -1,0 +1,95 @@
+LISTA 2
+
+• EXERCÍCIO 1:
+
+n1 = int(input('Digite o primeiro número: '))
+n2 = int(input('Digite o segundo número: '))
+n3 = int(input('Digite o terceiro número: '))
+
+if n1>n2+n3 or n2>n1+n3 or n3>n2+n1:
+    print ('Conceito Matemático: Um dos lados é maior que a soma dos demais.\nPortanto, não é um triângulo!')
+elif n1 == n2 == n3:
+    print ('Triângulo Equilátero')
+elif n1 == n2 or n1 == n3 or n2 == n3:
+    print ('Triângulo Isóceles')
+else:
+    print ('Triângulo Escaleno')
+
+• EXERCÍCIO 2:
+
+year = int(input('Digite um ano: '))
+if year % 4 == 0 and (year % 100 != 0 or year % 400 == 0):
+    print('Bissexto!')
+else:
+    print('Não é bissexto!')
+
+• EXERCÍCIO 3:
+
+peso = float(input('Digite o peso dos peixes pescados (Kg): '))
+if peso > 50:
+    excesso = peso - 50
+    multa = excesso * 4
+else:
+    excesso = multa = 0
+print (f'Excesso = {excesso:.2f} Kg\nMulta = R${multa:.2f}')
+
+• EXERCÍCIO 4:
+
+n1 = int(input('Digite um número: '))
+n2 = int(input('Digite outro número: '))
+n3 = int(input('Digite outro número: '))
+
+if n1==n2==n3:
+    print('São iguais!')
+elif n1>=n2  and n1>=n3:
+    print(n1)
+elif n2>=n1 and n2>=n3:
+    print(n2)
+else:
+    print(n3)
+
+• EXERCÍCIO 5:
+
+n1 = int(input('Digite um número: '))
+n2 = int(input('Digite outro número: '))
+n3 = int(input('Digite outro número: '))
+
+if n1==n2==n3:
+    print('São iguais!')
+elif n1>=n2  and n1>=n3:
+    print(f'Maior: {n1}')
+elif n2>=n1 and n2>=n3:
+    print(f'Maior: {n2}')
+else:
+    print(f'Maior: {n3}')
+if n1==n2==n3:
+    print()
+elif n1<=n2  and n1<=n3:
+    print(f'Menor: {n1}')
+elif n2<=n1 and n2<=n3:
+    print(f'Menor: {n2}')
+else:    
+    print(f'Menor: {n3}')
+
+• EXERCÍCIO 6:
+
+sh = float(input('Digite seu salário (por hora): R$'))
+h = float(input('Digite o número de horas trabalhadas por mês: '))
+sb = sh*h
+ir =  sb*0.11 #11%
+inss = sb*0.08 #8%
+sindicato = sb*0.05 #5%
+sl = sb-ir-inss-sindicato
+print(f'\nSalário Bruto = R${sb:.2f}\nDesconto do Importo de Renda = R${ir:.2f}\nDesconto do INSS = R${inss:.2f}\nDesconto do Sindicato = R${sindicato:.2f}\nSalário Líquido = R${sl:.2f}\n')
+
+• EXERCÍCIO 7:
+
+#1L = 3m²
+#Lata  = 18L = 54m² = R$80,00
+area = float(input('Digite o tamanho da área a ser pintada (m²): '))
+if area % 54 == 0:
+    quant_lata = area/54
+else:
+    quant_lata = int(area/54)+1 #"+1" garante que, quando o número não for exato, as latas sejam suficientes para cobrir o que resta.
+preco_total = quant_lata*80
+print(f'{quant_lata:.0f} lata(s)\nValor: R${preco_total:.2f}')

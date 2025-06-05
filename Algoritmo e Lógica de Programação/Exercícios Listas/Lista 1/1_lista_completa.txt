@@ -1,0 +1,73 @@
+LISTA 1
+
+• EXERCÍCIO 1:
+
+n1 = int(input('Digite um número: '))
+n2 = int(input('Digite outro número: '))
+print (f'A soma é igual a {n1 + n2}')
+
+• EXERCÍCIO 2:
+
+valor = int(input('Digite um valor (metros): '))
+print(f'Valor em milímetros = {valor*1000}')
+
+• EXERCÍCIO 3:
+
+d = int(input('Digite um número de dias: '))
+h = int(input('Digite um número de horas: '))
+m = int(input('Digite um número de minutos: '))
+s = int(input('Digite um número de segundos: '))
+resultado = d*24*60*60 + h*60*60 + m*60 + s
+print (f'Igual a {resultado} segundos')
+
+• EXERCÍCIO 4:
+
+salario = float(input('Digite um salário: R$'))
+aumento = float(input('Digite o valor do aumento (em porcentagem "%"): '))
+sfinal = print(f'Salário final igual a R${salario*aumento/100+salario:.2f}')
+vaumento = print (f'Valor do aumento igual a R${salario*aumento/100:.2f}')
+
+• EXERCÍCIO 5:
+
+m = float(input('Digite o valor da mercadoria: R$'))
+d = float(input('Digite a porcentagem (%) do desconto: '))
+mfinal = print(f'Preço final = R${m-m*d/100:.2f}')
+vd = print (f'Valor do desconto = R${m*d/100:.2f}')
+
+• EXERCÍCIO 6:
+
+d = float(input('Digite a distância a ser percorrida (Km): '))
+v = float(input('Digite a velocidade média constante (Km/h): '))
+t =  d/v
+print (f'Tempo da viagem = {t:.1f}h')
+
+• EXERCÍCIO 7:
+
+celcius = float(input('Digite a temperatura em ºC: '))
+fahrenheit = 9*celcius/5+32
+print (f'{celcius:.1f} ºC = {fahrenheit:.1f} ºF')
+
+• EXERCÍCIO 8:
+
+fahrenheit = float(input('Digite a temperatura em ºF: '))
+celcius = (fahrenheit-32)*5/9
+print (f'{fahrenheit:.1f} ºF = {celcius:.1f} ºC')
+
+• EXERCÍCIO 9:
+
+km = float(input('Digite a quantidade de Km peercorrido: '))
+d = float(input('Digite a quantidade de dias utilizados: '))
+r = d*60+km*0.15
+print (f'Valor total = R${r}')
+
+• EXERCÍCIO 10:
+
+c = int(input('Digite a quantidade de cigarros que você fuma por dia: '))
+a = int(input('Digite a quantidade de anos que você fuma: '))
+tc = c*365*a
+r = tc/144
+print (f'Você perdeu {r:.0f} dias!')
+
+• EXERCÍCIO 11:
+
+print (len(str(2**10000)))

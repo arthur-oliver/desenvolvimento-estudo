@@ -1,0 +1,36 @@
+GITHUB
+
+→ Terminal:
+
+• git config --global user.email "end_email" → logar usuário
+
+• git clone url_git_desejado → clonar repositório
+
+• git fetch → atualizar alterações
+
+• git pull → "pega" as atualizações
+
+• git status → listar arquivos não atualizados
+
+• git add . → adicionando todos os arquivos não atualizados
+
+• git add pasta/documento → adicionando arquivo específico não atualizado
+
+• git commit -m "padrão_mensagem_commit_(abaixo)"
+
+• git push → enviar para a branch
+
+
+
+
+→ Padrões do commit:
+• feat - nova funcionalidade
+• fix - correção de bugs
+• docs - alteração na documentação
+• style - formatação (espaço, pontuação)
+• refactor - melhoria no código sem alterar a funcionalidade
+• test - adição ou correção de testes
+• chore - tarefas de manutenção (dependências, config)
+
+Outros padrões, segue link:
+https://github.com/iuricode/padroes-de-commits
