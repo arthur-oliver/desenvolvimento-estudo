@@ -1,0 +1,98 @@
+sudo systemctl start flaskapi.service
+
+
+https://www.awsacademy.com/vforcesite/LMS_Login
+
+    1  sudo apt update
+    2  git clone https://github.com/arthur-oliver/API-Crows.git
+    3  sudo apt-cache search mysql-server
+    4  sudo apt install mysql-server-8.0 -y
+    5  sudo /etc/init.d/mysql status
+    6  mysql -u root
+    7  sudo mysql -u root 
+
+=================== MySQL ====================================
+# Agora dentro do prompt do MySQL:
+ # Cria um novo usuário 'usuario' acessível de qualquer host ('%'), com a senha 'meubd'.
+ mysql> create user 'usuario'@'%' identified by 'meubd';
+ # Executa um script SQL que cria o banco de dados e as tabelas necessárias.
+ mysql> source /home/ubuntu/API-Crows/src/criar_banco_feedback.sql;
+ # Concede todos os privilégios ao usuário sobre o banco de dados `feedback_database`.
+ mysql> grant all privileges on feedback_database.* to 'usuario'@'%' with grant option;
+ # Atualiza as permissões imediatamente no MySQL.
+ mysql> flush privileges;
+ # Sai do terminal do MySQL.
+ mysql> exit
+
+    8  cd API-Crows/
+    9  sudo apt install python3.12-venv
+   10  python3 -m venv venv
+   11  source venv/bin/activate
+   12  cd src
+   13  pip3 install -r requirements.txt 
+   14  python3 App.py
+   15  cd ..
+   16  cd ..
+   16  sudo nano start_flask.sh
+   18  chmod +x ~/start_flask.sh
+   19  sudo chmod +x ~/start_flask.sh
+   20  sudo nano /etc/systemd/system/flaskapi.service
+   21  sudo nano /home/ubuntu/start_flask.sh 
+   22  sudo systemctl daemon-reload
+   23  sudo systemctl enable flaskapi.service
+   24  sudo systemctl start flaskapi.service
+   25  sudo systemctl status flaskapi.service
+   26  history
+
+================================= arquivo .env ======================================
+# Flask
+FLASK_SECRET_KEY='ffc78978692c4be3865cf53095e1df28914b5272c2e63ee6dc1681395792f1bb'
+
+# Conexão com Banco MySQL:
+bd_host=localhost
+bd_user=usuario
+bd_password=meubd
+bd_name=feedback_database
+
+============================== arquivo start_flask.sh ===============================
+if ! systemctl is-active --quiet mysql; then
+	echo "MySQL não ativo. Iniciando MySQL..."
+	systemctl start mysql
+else
+	echo "MySQL já em execução."
+fi
+
+cd /home/ubuntu/API-Crows/
+source venv/bin/activate
+cd src/
+pip3 install -r requirements.txt
+python3 App.py
+
+============================ arquivo flaskapi.service =============================
+[Unit]
+Description=API Flask com MySQL
+After=network.target mysql.service
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/
+ExecStart=/bin/bash /home/ubuntu/start_flask.sh
+Restart=always
+RestartSec=5
+
+[Install]
+
+
+========================== Consultando o MySQL =================================
+ # Verifica se o banco foi criado corretamente, conectando-se com o novo usuário.
+ sudo mysql -u usuario -p
+ # Enter password: meubd
+ # Usa o banco de dados criado anteriormente.
+ mysql> use feedback_database;
+ # Visualiza os primeiros 10 registros da tabela `feedback`.
+ mysql> select * from feedback limit 10;
+ # Sai do terminal do MySQL.
+ mysql> exit
+
+WantedBy=multi-user.target
