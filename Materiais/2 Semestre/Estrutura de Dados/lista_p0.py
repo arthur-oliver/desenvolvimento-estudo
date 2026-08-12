@@ -1,6 +1,9 @@
 import os
 os.system("cls")
 
+#LIST COMPREHENSION
+#{chave: valor        for x in domínio        condição}
+
 #Seja uma lista de inteiros, mostre apenas os números pares usando list comprehension.
 list = [1, 2, 5, 6, 9,12]
 saida = [n for n in list if n%2==0]
@@ -29,11 +32,28 @@ def ultimo_caractere(palavra):
     return palavra[-1]
 saida = sorted(list,key=ultimo_caractere)
 print(f'5 -', saida)
+#Outro método
+list = 'au batata mel'.split()
+saida = sorted(list,key=lambda letra : letra[-1])
+print(f'5 -', saida)
 
 #Dada uma string, utilize list comprehension para criar uma nova string
 #onde os caracteres aparecem alternando entre maiúsculas e  minúsculas.
 
-#ERRO! CONSERTAR
-#string = 'cachorro'
-#saida = ''.join([letra.upper() if posicao % 2 == 0 else letra.lower() for posicao, letra in string])
-#print(f'6 -', saida)
+string = 'cachorro'
+saida = ''.join([letra.upper() if posicao % 2 == 0 else letra.lower() for posicao, letra in enumerate(string)]) #enumerate pega os respectivos valores da string (posição, letra)
+print(f'6 -', saida)
+
+#Dada uma lista de strings contendo números misturados com letras
+#(por exemplo, "a3b", "z12y", "c1x"), ordene a lista com base no número contido na string.
+
+list = ["a3b", "z12y", "c1x"]
+def separa_n (string):
+    indice = ''.join([letra for letra in string if letra in '123456789'])
+    return int(indice)
+for elemento in list:
+    separa_n(elemento)
+#saida = sorted(list,key=lambda indice:indice)
+saida = separa_n(list)
+print(f'7 -',saida)
+#TERMINAR!
