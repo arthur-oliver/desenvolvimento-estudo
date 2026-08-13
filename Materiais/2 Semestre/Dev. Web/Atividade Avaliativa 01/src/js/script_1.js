@@ -1,7 +1,7 @@
-var codigoPedido = 0
-
 function calcularFrete(){
-        
+    
+    var codigoPedido = 0
+    
     let combustivel = Number(prompt("Preço do litro de combustível:")); //pedi antes para ser o mesmo em todos os pedidos
     let pedidos = [];
     let opcao = 1;
