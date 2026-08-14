@@ -49,11 +49,7 @@ print(f'6 -', saida)
 
 list = ["a3b", "z12y", "c1x"]
 def separa_n (string):
-    indice = ''.join([letra for letra in string if letra in '123456789'])
+    indice = ''.join([letra for letra in string if letra in '0123456789'])
     return int(indice)
-for elemento in list:
-    separa_n(elemento)
-#saida = sorted(list,key=lambda indice:indice)
-saida = separa_n(list)
+saida = sorted(list, key=separa_n)
 print(f'7 -',saida)
-#TERMINAR!
