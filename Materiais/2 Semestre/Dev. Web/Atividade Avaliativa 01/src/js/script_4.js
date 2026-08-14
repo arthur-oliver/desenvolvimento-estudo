@@ -282,106 +282,67 @@ function reservaHotel(){
     var mediaHospede = faturamentoTotal / ocupacaoTotal;
 
 
-    var relatorio = "";
+    document.getElementById("relatorio").innerHTML =
 
-    relatorio = relatorio +
-        "RELATÓRIO FINAL\n\n";
+    "<h2>RELATÓRIO FINAL</h2>" +
 
-    relatorio = relatorio +
-        "Total de reservas: " + totalReservas + "\n";
+    "<p>Total de reservas: " + totalReservas + "</p>" +
 
-    relatorio = relatorio +
-        "Valor médio por reserva: R$ " +
-        mediaReserva.toFixed(2) + "\n\n";
+    "<p>Valor médio por reserva: R$ " +
+        mediaReserva.toFixed(2) + "</p>" +
 
-    relatorio = relatorio +
-        "VALOR POR TIPO\n";
+    "<h3>VALOR POR TIPO</h3>" +
 
-    relatorio = relatorio +
-        "Standard: R$ " +
-        totalStandard.toFixed(2) + "\n";
+    "<p>Standard: R$ " +
+        totalStandard.toFixed(2) + "</p>" +
 
-    relatorio = relatorio +
-        "Luxo: R$ " +
-        totalLuxo.toFixed(2) + "\n";
+    "<p>Luxo: R$ " +
+        totalLuxo.toFixed(2) + "</p>"+
 
-    relatorio = relatorio +
-        "Premium: R$ " +
-        totalPremium.toFixed(2) + "\n\n";
+    "<p>Premium: R$ " +
+        totalPremium.toFixed(2) + "</p>" +
 
-    relatorio = relatorio +
-        "VALOR POR TEMPORADA\n";
+    "<h3>VALOR POR TEMPORADA</h3>" +
 
-    relatorio = relatorio +
-        "Baixa: R$ " +
-        totalBaixa.toFixed(2) + "\n";
+    "<p>Baixa: R$ " +
+        totalBaixa.toFixed(2) + "</p>" +
 
-    relatorio = relatorio +
-        "Alta: R$ " +
-        totalAlta.toFixed(2) + "\n";
+    "<p>Alta: R$ " +
+        totalAlta.toFixed(2) + "</p>" +
 
-    relatorio = relatorio +
-        "Feriado: R$ " +
-        totalFeriado.toFixed(2) + "\n\n";
+    "<p>Feriado: R$ " +
+        totalFeriado.toFixed(2) + "</p>" +
 
-    relatorio = relatorio +
-        "RESERVA MAIS CARA\n";
+    "<h3>RESERVA MAIS CARA</h3>" +
 
-    relatorio = relatorio +
-        "Código: " + reservaMaisCara[0] + "\n";
+    "<p>Código: " + reservaMaisCara[0] + "</p>" +
+    "<p>Tipo: " + reservaMaisCara[1] + "</p>" +
+    "<p>Temporada: " + reservaMaisCara[2] + "</p>" +
+    "<p>Hóspedes: " + reservaMaisCara[4] + "</p>" +
 
-    relatorio = relatorio +
-        "Tipo: " + reservaMaisCara[1] + "\n";
+    "<p>Valor: R$ " +
+        reservaMaisCara[6].toFixed(2) + "</p>" +
 
-    relatorio = relatorio +
-        "Temporada: " + reservaMaisCara[2] + "\n";
+    "<h3>RESERVA MAIS BARATA</h3>" +
 
-    relatorio = relatorio +
-        "Hóspedes: " + reservaMaisCara[4] + "\n";
+    "<p>Código: " + reservaMaisBarata[0] + "</p>" +
+    "<p>Tipo: " + reservaMaisBarata[1] + "</p>" +
+    "<p>Temporada: " + reservaMaisBarata[2] + "</p>" +
+    "<p>Hóspedes: " + reservaMaisBarata[4] + "</p>" +
 
-    relatorio = relatorio +
-        "Valor: R$ " + reservaMaisCara[6].toFixed(2) + "\n\n";
+    "<p>Valor: R$ " +
+        reservaMaisBarata[6].toFixed(2) + "</p>" +
 
+    "<h3>CAFÉ DA MANHÃ</h3>" +
 
-    relatorio = relatorio +
-        "RESERVA MAIS BARATA\n";
+    "<p>Com café: " + reservasComCafe + "</p>" +
+    "<p>Sem café: " + reservasSemCafe + "</p>" +
 
-    relatorio = relatorio +
-        "Código: " + reservaMaisBarata[0] + "\n";
+    "<h3>OCUPAÇÃO</h3>" +
 
-    relatorio = relatorio +
-        "Tipo: " + reservaMaisBarata[1] + "\n";
+    "<p>Ocupação total: " +
+        ocupacaoTotal + " hóspede(s)/diária(s)</p>" +
 
-    relatorio = relatorio +
-        "Temporada: " + reservaMaisBarata[2] + "\n";
-
-    relatorio = relatorio +
-        "Hóspedes: " + reservaMaisBarata[4] + "\n";
-
-    relatorio = relatorio +
-        "Valor: R$ " + reservaMaisBarata[6].toFixed(2) + "\n\n";
-
-
-    relatorio = relatorio +
-        "CAFÉ DA MANHÃ\n";
-
-    relatorio = relatorio +
-        "Com café: " + reservasComCafe + "\n";
-
-    relatorio = relatorio +
-        "Sem café: " + reservasSemCafe + "\n\n";
-
-
-    relatorio = relatorio +
-        "OCUPAÇÃO\n";
-
-    relatorio = relatorio +
-        "Ocupação total: " + ocupacaoTotal + " hóspede(s)/diária(s)\n";
-
-    relatorio = relatorio +
-        "Valor médio por hóspede: R$ " +
-        mediaHospede.toFixed(2);
-
-
-    document.getElementById("relatorio").innerText = relatorio;
+    "<p>Valor médio por hóspede: R$ " +
+        mediaHospede.toFixed(2) + "</p>";
 }

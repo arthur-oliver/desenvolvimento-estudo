@@ -410,5 +410,3 @@ function folhaPagamento() {
 
         "<hr>";
 }
-
-folhaPagamento();
