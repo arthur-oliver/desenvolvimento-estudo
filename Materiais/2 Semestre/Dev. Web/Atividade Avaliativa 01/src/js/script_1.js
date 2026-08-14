@@ -137,21 +137,33 @@ function calcularFrete(){
 
     let media = soma / totalPedidos;
 
-    alert(
-        "RELATÓRIO FINAL\n\n" +
-        "Total de pedidos: " + totalPedidos + "\n" +
-        "Valor médio por pedido: R$ " + media.toFixed(2) + "\n\n" +
+    document.getElementById("relatorio").innerHTML =
 
-        "Sudeste: R$ " + totalSudeste.toFixed(2) + "\n" +
-        "Sul: R$ " + totalSul.toFixed(2) + "\n" +
-        "Centro-Oeste: R$ " + totalCentroOeste.toFixed(2) + "\n\n" +
+    "<h2>RELATÓRIO FINAL</h2>" +
 
-        "Pedido mais caro:\n" +
-        "Código: " + maior.codigo +
-        "\nValor: R$ " + maior.valor.toFixed(2) + "\n\n" +
+    "<p>Total de pedidos: " + totalPedidos + "</p>" +
 
-        "Pedido mais barato:\n" +
-        "Código: " + menor.codigo +
-        "\nValor: R$ " + menor.valor.toFixed(2)
-    );
+    "<p>Valor médio por pedido: R$ " +
+        media.toFixed(2) + "</p>" +
+
+    "<h3>VALOR POR REGIÃO</h3>" +
+
+    "<p>Sudeste: R$ " + totalSudeste.toFixed(2) + "</p>" +
+
+    "<p>Sul: R$ " + totalSul.toFixed(2) + "</p>" +
+
+    "<p>Centro-Oeste: R$ " +
+        totalCentroOeste.toFixed(2) + "</p>" +
+
+    "<h3>PEDIDO MAIS CARO</h3>" +
+
+    "<p>Código: " + maior.codigo + "</p>" +
+
+    "<p>Valor: R$ " + maior.valor.toFixed(2) + "</p>" +
+
+    "<h3>PEDIDO MAIS BARATO</h3>" +
+
+    "<p>Código: " + menor.codigo + "</p>" +
+
+    "<p>Valor: R$ " + menor.valor.toFixed(2) + "</p>";
 }
