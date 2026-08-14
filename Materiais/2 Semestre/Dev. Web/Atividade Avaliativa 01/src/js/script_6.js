@@ -391,7 +391,7 @@ function sistemaVendas() {
     }
 
 
-    // Exibe relatorio
+    // Relatorio
     document.getElementById("relatorio").innerHTML =
 
         "<h2>RELATORIO FINAL</h2>" +
