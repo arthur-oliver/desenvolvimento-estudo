@@ -14,7 +14,6 @@ function calcularFrete(){
 
         let codigo = prompt("Código do pedido:");
 
-        // Verifica se o código já existe
         let codigoValido = false;
 
         while (codigoValido == false) {
