@@ -1,8 +1,9 @@
 .container_exercicio {
     min-height: 100vh;
+    padding-top: 100px;
+    padding-bottom: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     gap: 20px;
 }

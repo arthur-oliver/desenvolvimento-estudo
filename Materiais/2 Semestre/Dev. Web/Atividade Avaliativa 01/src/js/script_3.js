@@ -218,35 +218,37 @@ function controleProducao(){
     var quantidadeOrdens = ordens.length;
 
     var mediaCusto = totalCusto / quantidadeOrdens;
+    // relatorio final 
+    document.getElementById("relatorio").innerHTML = 
 
-    alert(
-        "RELATÓRIO FINAL n\n" +
+        "<h2>RELATÓRIO FINAL</h2>" +
 
-        "Total de ordens: " + quantidadeOrdens +
+        "<hr>" +
 
-        "\n\nESTOQUE FINAL POR TIPO:" +
-        "\nPadrão: " + totalEstoquePadrao +
-        "\nPremium: " + totalEstoquePremium +
-        "\nSob encomenda: " + totalEstoqueEncomenda +
+        "<h3>Total de ordens</h3>" +
+        "<p>" + quantidadeOrdens + "</p>" +
 
-        "\n\nMédia de custo por ordem: R$ " +
-        mediaCusto.toFixed(2) +
+        "<h3>Estoque final por tipo</h3>" +
+        "<p>Padrão: " + totalEstoquePadrao + "</p>" +
+        "<p>Premium: " + totalEstoquePremium + "</p>" +
+        "<p>Sob encomenda: " + totalEstoqueEncomenda + "</p>" +
 
-        "\n\nMAIOR CUSTO:" +
-        "\nOrdem: " + codigoMaior +
-        "\nValor: R$ " + maiorCusto.toFixed(2) +
+        "<h3>Média de custo por ordem</h3>" +
+        "<p>R$ " + mediaCusto.toFixed(2) + "</p>" +
 
-        "\n\nMENOR CUSTO:" +
-        "\nOrdem: " + codigoMenor +
-        "\nValor: R$ " + menorCusto.toFixed(2) +
+        "<h3>Maior custo</h3>" +
+        "<p>Ordem: " + codigoMaior + "</p>" +
+        "<p>Valor: R$ " + maiorCusto.toFixed(2) + "</p>" +
 
-        "\n\nALERTAS:" +
-        "\nEstoque alto: " + quantidadeAlto +
-        "\nEstoque crítico: " + quantidadeCritico
-    );
+        "<h3>Menor custo</h3>" +
+        "<p>Ordem: " + codigoMenor + "</p>" +
+        "<p>Valor: R$ " + menorCusto.toFixed(2) + "</p>" +
+
+        "<h3>Alertas</h3>" +
+        "<p>Estoque alto: " + quantidadeAlto + "</p>" +
+        "<p>Estoque crítico: " + quantidadeCritico + "</p>";
 
     // relatorio por produto
-
     alert("RELATÓRIO POR PRODUTO");
 
     var produtos = [];

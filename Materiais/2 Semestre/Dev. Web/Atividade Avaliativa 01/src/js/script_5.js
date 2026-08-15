@@ -9,10 +9,10 @@ function treinoEsportivo() {
         // Lista de treinos
         var treinos = [];
 
-        var continuar = "S";
+        var continuar = 1;
 
         // Cadastrar
-        while (continuar == "S") {
+        while (continuar == 1) {
 
             // Codigo do treino
             var codigo = prompt("Digite o código do treino:");
@@ -151,10 +151,21 @@ function treinoEsportivo() {
 
             alert("Treino cadastrado com sucesso!");
 
-            // Pergunta continuar
-            continuar = prompt(
-                "Deseja cadastrar outro treino? (S/N)"
-            ).toUpperCase();
+            continuar = Number(prompt(
+                "Deseja cadastrar outro treino?\n" +
+                "1 - Sim\n" +
+                "2 - Não"
+            ));
+
+            while (continuar != 1 && continuar != 2) {
+                alert("Opção inválida!");
+
+                continuar = Number(prompt(
+                    "Deseja cadastrar outro treino?\n" +
+                    "1 - Sim\n" +
+                    "2 - Não"
+                ));
+            }
         }
 
         // Gera relatorio

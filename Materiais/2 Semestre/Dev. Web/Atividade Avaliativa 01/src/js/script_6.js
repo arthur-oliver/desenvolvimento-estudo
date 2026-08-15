@@ -14,10 +14,10 @@ function sistemaVendas() {
     // Lista vendas
     var vendas = [];
 
-    var continuar = "S";
+    var continuar = 1;
 
     // Cadastro
-    while (continuar == "S") {
+    while (continuar == 1) {
 
         // Codigo venda
         var codigo = prompt("Digite o codigo da venda:");
@@ -162,10 +162,21 @@ function sistemaVendas() {
 
         alert("Venda cadastrada com sucesso!");
 
-        // Pergunta continuar
-        continuar = prompt(
-            "Deseja cadastrar outra venda? (S/N)"
-        ).toUpperCase();
+        continuar = Number(prompt(
+            "Deseja cadastrar outra venda?\n" +
+            "1 - Sim\n" +
+            "2 - Não"
+        ));
+
+        while (continuar != 1 && continuar != 2) {
+            alert("Opção inválida!");
+
+            continuar = Number(prompt(
+                "Deseja cadastrar outra venda?\n" +
+                "1 - Sim\n" +
+                "2 - Não"
+            ));
+        }
     }
 
 

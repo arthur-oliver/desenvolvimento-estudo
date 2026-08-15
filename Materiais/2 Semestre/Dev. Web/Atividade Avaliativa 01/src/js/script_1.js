@@ -4,13 +4,13 @@ function calcularFrete(){
     
     let combustivel = Number(prompt("Preço do litro de combustível:")); //pedi antes para ser o mesmo em todos os pedidos
     let pedidos = [];
-    let opcao = 1;
+    let continuar = 1;
 
     let totalSudeste = 0;
     let totalSul = 0;
     let totalCentroOeste = 0;
 
-    while (opcao == 1) {
+    while (continuar == 1) {
 
         let codigo = prompt("Código do pedido:");
 
@@ -108,9 +108,21 @@ function calcularFrete(){
 
         alert("Pedido cadastrado!\nValor total: R$ " + valorTotal.toFixed(2));
 
-        opcao = Number(prompt(
-            "1 - Cadastrar outro pedido\n2 - Finalizar"
+        continuar = Number(prompt(
+            "Deseja cadastrar outro pedido?\n" +
+            "1 - Sim\n" +
+            "2 - Não"
         ));
+
+        while (continuar != 1 && continuar != 2) {
+            alert("Opção inválida!");
+
+            continuar = Number(prompt(
+                "Deseja cadastrar outro pedido?\n" +
+                "1 - Sim\n" +
+                "2 - Não"
+            ));
+        }
     }
 
     // Relatório

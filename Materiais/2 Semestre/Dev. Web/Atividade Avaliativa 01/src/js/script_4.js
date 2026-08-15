@@ -5,9 +5,9 @@ function reservaHotel(){
     var reservas = [];
     var codigos = [];
 
-    var opcao = "S";
+    var opcao = 1;
 
-    while (opcao != "N") {
+    while (opcao == 1) {
 
         var codigo = Number(prompt("Digite o código da reserva:"));
         var codigoExiste = false;
@@ -166,11 +166,20 @@ function reservaHotel(){
             "Valor total: R$ " + valorTotal.toFixed(2)
         );
 
-        opcao = prompt("Deseja cadastrar outra reserva? S - Sim / N - Não").toUpperCase();
+        continuar = Number(prompt(
+            "Deseja cadastrar outra reserva?\n" +
+            "1 - Sim\n" +
+            "2 - Não"
+        ));
 
-        while (opcao != "S" && opcao != "N") {
-            alert("Digite apenas S ou N.");
-            opcao = prompt("Deseja cadastrar outra reserva? S - Sim / N - Não").toUpperCase();
+        while (continuar != 1 && continuar != 2) {
+            alert("Opção inválida!");
+
+            continuar = Number(prompt(
+                "Deseja cadastrar outra reserva?\n" +
+                "1 - Sim\n" +
+                "2 - Não"
+            ));
         }
     }
 

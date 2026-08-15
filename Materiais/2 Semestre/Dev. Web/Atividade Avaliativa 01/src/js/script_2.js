@@ -35,11 +35,11 @@ function folhaPagamento() {
 
     // controle dos codigos
     let codigos = "";
-    let continuar = "S";
+    let continuar = 1;
 
 
     // cadastro de funcionarios
-    while (continuar == "S") {
+    while (continuar == 1) {
 
         // codigo
         let codigo = prompt("Digite o código do funcionário:");
@@ -281,22 +281,20 @@ function folhaPagamento() {
         );
 
 
-        // continuar cadastro
-        continuar = prompt(
+        continuar = Number(prompt(
             "Deseja cadastrar outro funcionário?\n" +
-            "S - Sim\n" +
-            "N - Não"
-        ).toUpperCase();
+            "1 - Sim\n" +
+            "2 - Não"
+        ));
 
-        while (continuar != "S" && continuar != "N") {
+        while (continuar != 1 && continuar != 2) {
+            alert("Opção inválida!");
 
-            alert("Digite apenas S ou N.");
-
-            continuar = prompt(
+            continuar = Number(prompt(
                 "Deseja cadastrar outro funcionário?\n" +
-                "S - Sim\n" +
-                "N - Não"
-            ).toUpperCase();
+                "1 - Sim\n" +
+                "2 - Não"
+            ));
         }
     }
 
