@@ -5,9 +5,9 @@ function reservaHotel(){
     var reservas = [];
     var codigos = [];
 
-    var opcao = 1;
+    var continuar = 1;
 
-    while (opcao == 1) {
+    while (continuar == 1) {
 
         var codigo = Number(prompt("Digite o código da reserva:"));
         var codigoExiste = false;

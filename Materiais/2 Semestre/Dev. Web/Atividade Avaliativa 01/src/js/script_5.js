@@ -375,9 +375,9 @@ function treinoEsportivo() {
 
             listaJogadores = listaJogadores +
 
-                "<p><strong>" +
+                "<p>" +
                 jogadores[i].nome +
-                "</strong> - " +
+                " - " +
 
                 "Posição: " +
                 nomePosicao(jogadores[i].posicao) +
