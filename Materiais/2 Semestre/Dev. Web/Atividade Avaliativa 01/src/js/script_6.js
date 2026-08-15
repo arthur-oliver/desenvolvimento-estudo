@@ -407,6 +407,8 @@ function sistemaVendas() {
 
         "<h2>RELATORIO FINAL</h2>" +
 
+        "<hr>" +
+
         "<p>Total de vendas registradas: " +
         totalVendas +
         "</p>" +

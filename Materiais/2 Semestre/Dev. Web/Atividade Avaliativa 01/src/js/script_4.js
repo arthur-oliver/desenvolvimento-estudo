@@ -295,6 +295,8 @@ function reservaHotel(){
 
     "<h2>RELATÓRIO FINAL</h2>" +
 
+    "<hr>" +
+
     "<p>Total de reservas: " + totalReservas + "</p>" +
 
     "<p>Valor médio por reserva: R$ " +

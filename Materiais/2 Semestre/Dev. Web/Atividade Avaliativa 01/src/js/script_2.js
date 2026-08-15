@@ -404,7 +404,5 @@ function folhaPagamento() {
 
         "Sem bônus: " +
         bonusNenhum +
-        "</p>" +
-
-        "<hr>";
+        "</p>";
 }

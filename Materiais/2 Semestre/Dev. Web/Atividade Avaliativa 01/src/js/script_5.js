@@ -398,6 +398,8 @@ function treinoEsportivo() {
 
             "<h2>RELATÓRIO FINAL</h2>" +
 
+            "<hr>" +
+
             "<p>Total de treinos cadastrados: " +
             totalTreinos +
             "</p>" +

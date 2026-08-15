@@ -57,10 +57,10 @@ function calcularFrete(){
 
         let distancia = Number(prompt("Distância em km:"));
         let quantidade = Number(prompt("Quantidade de peças:"));
-        let rastreamento = prompt("Deseja rastreamento? (S/N)");
+        let rastreamento = prompt("Deseja rastreamento? (1 - Sim/ 2 - Não)");
 
-        while (rastreamento != "S" && rastreamento != "N") {
-            rastreamento = prompt("Digite apenas S ou N:");
+        while (rastreamento != 1 && rastreamento != 2) {
+            rastreamento = prompt("Digite apenas 1 - Sim/ 2 - Não:");
         }
 
         // Valor das peças
@@ -79,7 +79,7 @@ function calcularFrete(){
         // Rastreamento
         let valorRastreamento = 0;
 
-        if (rastreamento == "S") {
+        if (rastreamento == 1) {
             valorRastreamento = 200;
         }
 
@@ -151,6 +151,8 @@ function calcularFrete(){
     document.getElementById("relatorio").innerHTML =
 
     "<h2>RELATÓRIO FINAL</h2>" +
+
+    "<hr>" +
 
     "<p>Total de pedidos: " + totalPedidos + "</p>" +
 
