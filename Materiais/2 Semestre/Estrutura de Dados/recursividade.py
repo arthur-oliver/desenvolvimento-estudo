@@ -1,6 +1,8 @@
 import os
 os.system("cls")
 
+#RECURSIVIDADE = FUNÇÃO DENTRO DE FUNÇÃO...
+
 #RECURSIVIDADE
 def fat(n):
     if n == 0 or n == 1: return 1
