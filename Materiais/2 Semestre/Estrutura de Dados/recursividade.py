@@ -45,4 +45,4 @@ print(sd(123))
 def fib(n): #somente o número na posição n da sequência de fiboonacci: 1 1 2 3 5 8 13 21 34
    if n == 1 or n == 2 : return 1
    return fib(n-1) + fib(n-2)
-print(fib(100)) #saída = 8
+print(fib(6)) #saída = 8
