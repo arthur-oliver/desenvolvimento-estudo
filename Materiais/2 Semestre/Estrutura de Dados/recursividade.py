@@ -46,3 +46,19 @@ def fib(n): #somente o número na posição n da sequência de fiboonacci: 1 1 2
    if n == 1 or n == 2 : return 1
    return fib(n-1) + fib(n-2)
 print(fib(6)) #saída = 8
+
+ # método mais eficiente que o anterior
+dic = {}
+def fib(n): #somente o número na posição n da sequência de fiboonacci: 1 1 2 3 5 8 13 21 34
+   if n == 1 or n == 2 : return 1
+   if n not in dic: dic[n] = fib(n-1) + fib(n-2)
+   return dic[n]
+print(fib(100)) #saída = 354224848179261915075 (no anterior demoraria 4h para encontrar fib(100))
+
+ # método mais eficiente que o anterior (não calcula o que já foi calculado)
+from functools import cache
+@cache
+def fib(n): #somente o número na posição n da sequência de fiboonacci: 1 1 2 3 5 8 13 21 34
+   if n == 1 or n == 2 : return 1
+   return fib(n-1) + fib(n-2)
+print(fib(100))
