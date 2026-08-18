@@ -87,10 +87,15 @@ print(f'13 -', dicionario_final)
 #Dada uma frase, crie um dicionário onde as chaves são palavras e os valores são a contagem de vezes que cada palavra aparece.
 frase = "abacate no almoco e melhor que abacate na janta".split()
 dicionario = {palavra: frase.count(palavra) for palavra in frase}
-print(f'15 -', dicionario)
+print(f'14 -', dicionario)
 
 #Dado um dicionário onde os valores são números, crie um novo dicionário onde cada valor seja a raiz quadrada do original.
-#TERMINAR!
+import math
+dicionario = {'a': 9, 'b': 4, 'c': 121, 'd': 16}
+dicionario_final = {letra: math.sqrt(valor) for letra, valor in dicionario.items()}
+print(f'15 -', dicionario_final)
 
 #Dada uma lista de palavras, crie um dicionário onde as chaves sejam as primeiras letras e os valores sejam listas das palavras correspondentes.
-#TERMINAR!
+lista = ["abacate", "beterraba", "banana", "cereja", "damasco"]
+dicionario = {letra: [palavra for palavra in lista if palavra.startswith(letra)] for letra in set(palavra[0] for palavra in lista)}
+print(f'16 -', dicionario)
