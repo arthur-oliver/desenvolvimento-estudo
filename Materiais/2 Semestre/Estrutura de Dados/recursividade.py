@@ -79,3 +79,40 @@ def dec2bin(n): #dec2bin(18) -> '10010'
    return dec2bin(n // 2) + str(n % 2)
 print(dec2bin(18))
 # suponha  n > 0 para a conversão para binário
+
+# ----------------------
+
+#EXERCÍCIO
+#as duas funções são iguais, sim ou não, explique. Melhore se estiver ineficiente.
+
+def f1(n):
+   if n == 0 : return 1
+   return 2 * f1(n-1)
+print(f1(100))
+
+from functools import cache #adicionei (melhorei)
+@cache #adicionei (melhorei)
+def f2(n):
+   if n == 0 : return 1
+   return f2(n-1) + f2(n-1)
+print(f2(100))
+
+#R: Não são iguais, a primeira calcula sem repetir e a segunda duplica (mas tem a mesma função).
+
+# ----------------------
+
+# EXERCÍCIOS EXTRA!
+'''
+def cont_dig(n):      # cont_dig(12345) -> 5
+def soma_lista(lst):  # soma_lista([2,4,6]) -> 12
+def max_lista(lst):   # max_lista([3,8,2,5]) -> 8
+def pal(s):           # pal('radar') -> True
+def conta_vogal(s):   # conta_vogal('abacate') -> 4
+def soma_par(n):      # soma_par(6) -> 2+4+6 -> 12
+#soma dos pares de 1 até n (inclusive)
+'''
+
+def cont_dig(n):      # cont_dig(12345) -> 5 recursividade
+   if n < 10: return 1
+   return 1 + cont_dig(n // 10)
+print(cont_dig(12345))
