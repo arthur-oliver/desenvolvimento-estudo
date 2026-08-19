@@ -1,0 +1,29 @@
+->inistalar Typescript
+cmd: npm install -g typescript
+
+->Compilar aquivo TS para JS
+cmd: tsc nome arquivo.ts
+
+->Connfigurar parâmetros de compilação do TS
+cmd: tsc --init ("outDir": "js", - escolhe qual o compilador de saída na pasta "js" e "rootDir": "ts", o de entrada na pasta "ts")
+
+-> Mínimo Funcional no arquivo:
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    "target": "es2019",
+    "module": "commonjs",
+    "rootDir": "ts", // arquivos entrada (pre-compilador) - "ts" = nome da pasta  dos arquivos
+    "outDir": "js", // arquivos saida (pos-compilador) "js" = nome da pasta  dos arquivos
+    "strict": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+  }
+}
+
+->Compilar (depois de já feito procedimento inicial)
+cmd: tsc
+
+->Testar no terminal
+cmd: node ./js/index.js
