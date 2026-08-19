@@ -57,10 +57,25 @@ def fib(n): #somente o número na posição n da sequência de fiboonacci: 1 1 2
    return dic[n]
 print(fib(100)) #saída = 354224848179261915075 (no anterior demoraria 4h para encontrar fib(100))
 
- # método mais eficiente que o anterior (não calcula o que já foi calculado)
+ # método mais eficiente que o anterior (não calcula o que já foi calculado) - utilizando a memória (programação de alto nível)
 from functools import cache
 @cache
 def fib(n): #somente o número na posição n da sequência de fiboonacci: 1 1 2 3 5 8 13 21 34
    if n == 1 or n == 2 : return 1
    return fib(n-1) + fib(n-2)
 print(fib(100))
+
+# ----------------------
+
+def mdc(a,b): # cálculo mdc
+   if b == 0: return a
+   return mdc(b, a % b)
+print(mdc(21,15)) #saída 3
+
+# ----------------------
+
+def dec2bin(n): #dec2bin(18) -> '10010'
+   if n == 0: return ''
+   return dec2bin(n // 2) + str(n % 2)
+print(dec2bin(18))
+# suponha  n > 0 para a conversão para binário
