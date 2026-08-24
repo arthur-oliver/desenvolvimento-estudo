@@ -120,21 +120,25 @@ print(cont_dig(12345))
 def soma_lista(lst):  # soma_lista([2,4,6]) -> 12
    if len(lst) == 0: return 0
    return lst[0] + soma_lista(lst[1:])
+print(soma_lista([2, 4, 6]))
 
 def max_lista(lst):   # max_lista([3,8,2,5]) -> 8
    if len(lst) == 1: return lst[0]
    max_rest = max_lista(lst[1:])
    return lst[0] if lst[0] > max_rest else max_rest
+print(max_lista([3, 8, 2, 5]))
 
 def pal(s):           # pal('radar') -> True
    if len(s) <= 1: return True
    if s[0] != s[-1]: return False
    return pal(s[1:-1])
+print(pal('radar'))
 
 def conta_vogal(s):   # conta_vogal('abacate') -> 4
    if len(s) == 0: return 0
    count = 1 if s[0].lower() in 'aeiou' else 0
    return count + conta_vogal(s[1:])
+print(conta_vogal('abacate'))
 
 def soma_par(n):      # soma_par(6) -> 2+4+6 -> 12 - OBS: soma dos pares de 1 até n (inclusive)
    if n <= 0: return 0
@@ -142,3 +146,4 @@ def soma_par(n):      # soma_par(6) -> 2+4+6 -> 12 - OBS: soma dos pares de 1 at
        return n + soma_par(n - 2)
    else:
        return soma_par(n - 1)
+print(soma_par(6))
