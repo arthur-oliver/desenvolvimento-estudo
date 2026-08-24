@@ -116,3 +116,29 @@ def cont_dig(n):      # cont_dig(12345) -> 5 recursividade
    if n < 10: return 1
    return 1 + cont_dig(n // 10)
 print(cont_dig(12345))
+
+def soma_lista(lst):  # soma_lista([2,4,6]) -> 12
+   if len(lst) == 0: return 0
+   return lst[0] + soma_lista(lst[1:])
+
+def max_lista(lst):   # max_lista([3,8,2,5]) -> 8
+   if len(lst) == 1: return lst[0]
+   max_rest = max_lista(lst[1:])
+   return lst[0] if lst[0] > max_rest else max_rest
+
+def pal(s):           # pal('radar') -> True
+   if len(s) <= 1: return True
+   if s[0] != s[-1]: return False
+   return pal(s[1:-1])
+
+def conta_vogal(s):   # conta_vogal('abacate') -> 4
+   if len(s) == 0: return 0
+   count = 1 if s[0].lower() in 'aeiou' else 0
+   return count + conta_vogal(s[1:])
+
+def soma_par(n):      # soma_par(6) -> 2+4+6 -> 12 - OBS: soma dos pares de 1 até n (inclusive)
+   if n <= 0: return 0
+   if n % 2 == 0:
+       return n + soma_par(n - 2)
+   else:
+       return soma_par(n - 1)
