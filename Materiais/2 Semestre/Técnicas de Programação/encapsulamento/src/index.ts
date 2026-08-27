@@ -20,6 +20,6 @@ let en = new Enfermeiro("Joana", "123.447.789-00", "654321")
 console.log(informacoes(md))
 console.log(informacoes(en))
 
-//PARA TESTAR: TERMMINAL CMD
+//PARA TESTAR: TERMINAL CMD
 // TSC
 //NODE ./DESTINO/INDEX.JS
