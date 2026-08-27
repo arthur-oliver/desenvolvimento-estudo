@@ -1,4 +1,4 @@
-export default class Pessoa {
+export default abstract class Pessoa {
     protected nome: string;
     protected cpf: string;
     constructor(nome: string, cpf: string);

@@ -11,7 +11,7 @@ const informacoes = (pessoa: Pessoa) => {
         console.log(`CRM do medico: ${pessoa.getCrm}`)
     }
     if(pessoa instanceof Enfermeiro)
-        console.log(`CRM do enfermeiro: ${pessoa.getCre}`)
+        console.log(`CRE do enfermeiro: ${pessoa.getCre}`)
 }   
 
 let md = new Medico("Arthur", "123.456.789-00", "123456")
