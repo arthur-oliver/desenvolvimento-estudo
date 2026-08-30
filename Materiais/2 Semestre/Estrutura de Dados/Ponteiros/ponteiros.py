@@ -5,7 +5,7 @@ os.system("cls")
 
 a = [1, 2 ,3]
 b = a
-a [0] = 42
+a [0] = 20
 print(a)
 print(b)
 print(id(a)) #ponteiro (mesmo endereço de memória)
@@ -16,7 +16,7 @@ print('\n')
 
 a = [4, 5 ,6]
 b = list (a)
-a[0] = 42
+a[0] = 100
 print(a)
 print(b)
 print(id(a)) #ponteiro diferente (diferente endereço de memória)
