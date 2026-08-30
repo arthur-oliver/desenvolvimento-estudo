@@ -8,18 +8,19 @@ b = a
 a [0] = 42
 print(a)
 print(b)
-id(a) #ponteiro (mesmo endereço de memória)
-id(b) #ponteiro (mesmo endereço de memória)
+print(id(a)) #ponteiro (mesmo endereço de memória)
+print(id(b)) #ponteiro (mesmo endereço de memória)
 
 # --------------------------------------------
+print('\n')
 
 a = [4, 5 ,6]
 b = list (a)
 a[0] = 42
 print(a)
 print(b)
-id(a) #ponteiro diferente (diferente endereço de memória)
-id(b) #ponteiro diferente (diferente endereço de memória)
+print(id(a)) #ponteiro diferente (diferente endereço de memória)
+print(id(b)) #ponteiro diferente (diferente endereço de memória)
 
 # --------------------------------------------
 
