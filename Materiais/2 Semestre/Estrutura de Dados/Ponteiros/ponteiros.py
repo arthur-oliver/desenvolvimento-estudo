@@ -28,7 +28,7 @@ print(id(b)) #ponteiro diferente (diferente endereço de memória)
 #Declaração de ponteiro
 int* x;
 
-#Usando ponteiro para apontar para um inteiro
+#Atribuindo ponteiro para apontar para um inteiro
 *x = 42;
 
 #Aloca memória para um inteiro
