@@ -14,7 +14,7 @@ void Imprima2(celula *lst) {
          printf ("%d\n", p->conteudo);
 }
 
-void Insere2(int y, celula **p){
+void Insere2(int y, celula **p){ //**p é um ponteiro que aponta para outro ponteiro
     celula *nova;
     nova = malloc(sizeof(celula));
     nova->conteudo = y;
