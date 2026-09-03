@@ -1,3 +1,4 @@
+//Conteúdo: herança, polimorfismo, classe abstrata
 import Pessoa from "./pessoa";
 import Medico from "./medico";
 import Enfermeiro from "./enfermeiro";
@@ -20,6 +21,14 @@ let en = new Enfermeiro("Joana", "123.447.789-00", "654321")
 console.log(informacoes(md))
 console.log(informacoes(en))
 
-//PARA TESTAR: TERMINAL CMD
-// TSC
-//NODE ./DESTINO/INDEX.JS
+//Para funcionar  - Terminal CMD:
+// tsc
+// node destino/index.js
+
+//Se não funcionar:
+//Apaga pasta 'destino' e arquivo 'tsconfig.json'
+//Para funcionar  - Terminal CMD:
+// tem que ter tsc instalado ----> npm install -g typescript (já tem nesse computador)
+// tsc --init
+// tsc
+// node destino/index.js
