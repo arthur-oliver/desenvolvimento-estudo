@@ -18,9 +18,9 @@ dinheiro = 2000
 while dinheiro < 6000:
    mes = mes + 1
    dinheiro = dinheiro + 2000*0.15
-   if mes % 5:
+   if mes % 5 == 0:
      dinheiro = dinheiro - 300
-   if mes % 8:
+   if mes % 8 == 0:
      dinheiro = dinheiro + 800
 
 print(f'Exercício 1: \n(Básico)\n\nEm {mes} meses, atinge R$ {dinheiro:.2f}')
