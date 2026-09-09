@@ -1,0 +1,10 @@
+REACT
+
+PARA CRIAR PROJETO (CMD) - substituir "my-app" por "nome_do_projeto_pasta":
+npm create vite@latest my-app -- --template react-ts
+
+PARA RODAR NO NAVEGADOR:
+npm run dev
+
+PARA CANCELAR (RODAR NO NAVEGADOR):
+CTRL C
