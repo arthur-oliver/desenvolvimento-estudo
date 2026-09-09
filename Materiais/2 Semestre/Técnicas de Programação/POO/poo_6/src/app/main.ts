@@ -1,0 +1,64 @@
+import Entrada from "../io/entrada";
+import Empresa from "../modelo/empresa"
+import CadastroCliente from "../negocio/cadastroCliente";
+import ListagemClientes from "../negocio/listagemClientes";
+import ExclusaoCliente from "../negocio/exclusaoCliente";
+import ModificacaoCliente from "../negocio/modificacaoCliente";
+
+console.log(`Bem-vindo ao cadastro de clientes do Grupo World Beauty`)
+let empresa = new Empresa()
+let execucao = true
+
+while (execucao) {
+    console.log(`Opções:`);
+    console.log(`1 - Cadastrar cliente`);
+    console.log(`2 - Listar todos os clientes`);
+    console.log(`3 - Excluir cliente`);
+    console.log(`4 - Modificar cliente`);
+    console.log(`0 - Sair`);
+
+    let entrada = new Entrada()
+    let opcao = entrada.receberNumero(`Por favor, escolha uma opção: `)
+
+    switch (opcao) {
+        case 1:
+            let cadastro = new CadastroCliente(empresa.getClientes)
+            cadastro.cadastrar()
+            break;
+
+        case 2:
+            let listagem = new ListagemClientes(empresa.getClientes)
+            listagem.listar()
+            break;
+
+        case 3:
+            let exclusao = new ExclusaoCliente(empresa.getClientes)
+            exclusao.cadastrar()
+            break;
+
+        case 4:
+            let modificacao = new ModificacaoCliente(empresa.getClientes)
+            modificacao.cadastrar()
+            break;
+
+        case 0:
+            execucao = false
+            console.log(`Até mais`)
+            break;
+
+        default:
+            console.log(`Operação não entendida :(`)
+    }
+}
+
+//Para funcionar  - Terminal CMD:
+// tsc
+// node out/app/main.js
+
+//Se não funcionar:
+//Apaga pasta 'out' e arquivo 'tsconfig.json'
+//Para funcionar  - Terminal CMD:
+// tem que ter tsc instalado ----> npm install -g typescript (já tem nesse computador)
+// tsc --init
+// tsc
+// node out/app/main.js
