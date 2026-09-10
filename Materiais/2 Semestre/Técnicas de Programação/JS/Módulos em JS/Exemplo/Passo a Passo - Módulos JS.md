@@ -10,4 +10,3 @@ COMO CRIAR INTERAÇÃO ENTRE MÓDULOS EM JS
 4. Cria outra pasta e repete o processo - OBS: é melhor abir outra janela do VSCode para funcionar.
 5. Abrir terminal: npm install "endereco/caminho\_modulo\_deseja\_importar"- OBS: tem que ser o terminal cmd (não powershell).
 6. Para rodar: terminal: node index js - OBS: tem que ser o terminal cmd (não powershell).
-
