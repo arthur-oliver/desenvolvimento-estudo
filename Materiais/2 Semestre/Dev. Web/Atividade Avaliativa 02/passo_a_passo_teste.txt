@@ -1,0 +1,180 @@
+PASSO A PASSO PARA RODAR E TESTAR A API
+
+1. Abra o Prompt de Comando (CMD) na pasta onde está
+   o arquivo index.js.
+
+2. Inicialize o projeto Node.js:
+
+   npm init -y
+
+3. Instale o Express:
+
+   npm install express
+
+4. Inicie o servidor:
+
+   node index.js
+
+5. Se estiver tudo correto, aparecerá:
+
+   Servidor rodando em http://localhost:3000
+
+6. NÃO feche esse CMD.
+   Ele ficará executando o servidor.
+
+--------------------------------------------------------
+
+TESTANDO A API
+
+
+7. Abra um SEGUNDO CMD.
+
+   Esse segundo terminal será utilizado para testar
+   as rotas da API.
+
+--------------------------------------------------------
+
+CRIANDO A ORDEM 001
+
+No SEGUNDO CMD, execute:
+
+curl -X POST http://localhost:3000/ordens -H "Content-Type: application/json" -d "{\"codigoOrdem\":\"001\",\"codigoProduto\":\"PROD01\",\"tipoProduto\":1,\"quantidadeProduzida\":1000,\"custoUnitarioBase\":10,\"estoqueInicial\":2000}"
+
+Dados utilizados:
+
+codigoOrdem = 001
+codigoProduto = PROD01
+tipoProduto = 1
+quantidadeProduzida = 1000
+custoUnitarioBase = 10
+estoqueInicial = 2000
+
+Resultado esperado:
+
+estoqueFinal = 3000
+custoUnitarioAjustado = 10
+custoTotal = 10000
+alertaEstoque = NORMAL
+
+--------------------------------------------------------
+
+CRIANDO A ORDEM 002
+
+No SEGUNDO CMD, execute:
+
+curl -X POST http://localhost:3000/ordens -H "Content-Type: application/json" -d "{\"codigoOrdem\":\"002\",\"codigoProduto\":\"PROD02\",\"tipoProduto\":2,\"quantidadeProduzida\":3000,\"custoUnitarioBase\":20,\"estoqueInicial\":2500}"
+
+Dados utilizados:
+
+codigoOrdem = 002
+codigoProduto = PROD02
+tipoProduto = 2
+quantidadeProduzida = 3000
+custoUnitarioBase = 20
+estoqueInicial = 2500
+
+Resultado esperado:
+
+estoqueFinal = 5500
+custoUnitarioAjustado = 22
+custoTotal = 66000
+alertaEstoque = ALTO
+
+--------------------------------------------------------
+
+CRIANDO A ORDEM 003
+
+No SEGUNDO CMD, execute:
+
+curl -X POST http://localhost:3000/ordens -H "Content-Type: application/json" -d "{\"codigoOrdem\":\"003\",\"codigoProduto\":\"PROD03\",\"tipoProduto\":3,\"quantidadeProduzida\":200,\"custoUnitarioBase\":50,\"estoqueInicial\":100}"
+
+Dados utilizados:
+
+codigoOrdem = 003
+codigoProduto = PROD03
+tipoProduto = 3
+quantidadeProduzida = 200
+custoUnitarioBase = 50
+estoqueInicial = 100
+
+Resultado esperado:
+
+estoqueFinal = 300
+custoUnitarioAjustado = 60
+custoTotal = 12000
+alertaEstoque = CRITICO
+
+--------------------------------------------------------
+
+CONSULTANDO TODAS AS ORDENS
+
+Para visualizar todas as ordens cadastradas:
+
+curl http://localhost:3000/ordens
+
+--------------------------------------------------------
+
+BUSCANDO UMA ORDEM ESPECÍFICA
+
+Exemplo: buscar a ordem 001:
+
+curl http://localhost:3000/ordens/001
+
+--------------------------------------------------------
+
+FILTRANDO POR TIPO DE PRODUTO
+
+Exemplo: mostrar somente produtos do tipo 2:
+
+curl "http://localhost:3000/ordens?tipo=2"
+
+--------------------------------------------------------
+
+FILTRANDO POR ALERTA DE ESTOQUE
+
+Exemplo: mostrar somente ordens com estoque ALTO:
+
+curl "http://localhost:3000/ordens?alerta=ALTO"
+
+--------------------------------------------------------
+
+ATUALIZANDO UMA ORDEM
+
+Exemplo: alterar a quantidade produzida da ordem 001:
+
+curl -X PUT http://localhost:3000/ordens/001 -H "Content-Type: application/json" -d "{\"quantidadeProduzida\":2000}"
+
+--------------------------------------------------------
+
+EXCLUINDO UMA ORDEM
+
+Exemplo: excluir a ordem 003:
+
+curl -X DELETE http://localhost:3000/ordens/003
+
+--------------------------------------------------------
+
+CONSULTANDO O RELATÓRIO
+
+Para visualizar o relatório geral:
+
+curl http://localhost:3000/relatorios/ordens
+
+--------------------------------------------------------
+
+PARANDO O SERVIDOR
+
+Para encerrar o servidor, volte ao PRIMEIRO CMD,
+onde o comando "node index.js" está sendo executado.
+
+Pressione:
+
+Ctrl + C
+
+--------------------------------------------------------
+
+OBSERVAÇÃO
+
+As ordens são armazenadas somente na memória da aplicação.
+
+Se o servidor for encerrado e iniciado novamente, todas as ordens cadastradas serão apagadas.
