@@ -59,7 +59,8 @@ WHERE cd_preco_venda < (
 
 
 #Exercício 5
--- Liste os nomes dos CDs que tenham preço de venda maior que 10,00 reais ou a gravadora seja a de código 3, ordenados por ordem alfabética decrescente dos nomes dos CDs. Exibir os nomes dos CDs iniciando com a letra maiúscula.
+-- Liste os nomes dos CDs que tenham preço de venda maior que 10,00 reais ou a gravadora seja a de código 3,
+-- ordenados por ordem alfabética decrescente dos nomes dos CDs. Exibir os nomes dos CDs iniciando com a letra maiúscula.
 
 SELECT CONCAT(
            UPPER(LEFT(cd_nome, 1)),
@@ -72,7 +73,8 @@ ORDER BY cd_nome DESC;
 
 
 #Exercício 6
--- Exibir o nome, a data de lançamento e nome da gravadora dos CDs que possuem data de lançamento em um intervalo de datas.
+-- Exibir o nome, a data de lançamento e nome da gravadora dos CDs que possuem data de lançamento
+-- em um intervalo de datas.
 
 SELECT c.cd_nome,
        c.cd_data_lancamento,
@@ -132,51 +134,35 @@ LEFT JOIN cd indicado
 -- Após realizar o comando SELECT * FROM CD_CATEGORIA qual será o resultado?
 -- Explique esse resultado.
 
+SET autocommit = 0;
 INSERT INTO CD_CATEGORIA VALUES (4,31.00,40.00);
-
 INSERT INTO CD_CATEGORIA VALUES (5,34.00,40.00);
-
 ROLLBACK;
-
-
 INSERT INTO CD_CATEGORIA VALUES (6,45.00,50.00);
-
 ROLLBACK;
-
-
 INSERT INTO CD_CATEGORIA VALUES (7,51.00,60.00);
-
 UPDATE CD_CATEGORIA
 SET MENOR_PRECO = 32.00
 WHERE CAT_CODIGO = 7;
-
 COMMIT;
-
-
 INSERT INTO CD_CATEGORIA VALUES (8,62.00,70.00);
-
 ROLLBACK;
-
 COMMIT;
-
-
 SELECT * FROM CD_CATEGORIA;
-
 
 -- Resultado esperado:
 -- CAT_CODIGO | MENOR_PRECO | MAIOR_PRECO
---      1     |    10.00    |    15.00
---      2     |    16.00    |    20.00
+--      1     |     5.00    |    10.00
+--      2     |    11.00    |    20.00
 --      3     |    21.00    |    30.00
 --      7     |    32.00    |    60.00
-
 -- Explicação:
 -- Os registros 4 e 5 foram inseridos, mas foram removidos pelo ROLLBACK.
 -- O registro 6 também foi inserido, mas foi removido pelo ROLLBACK.
--- O registro 7 foi inserido e seu MENOR_PRECO foi alterado de 51.00
--- para 32.00. O COMMIT salvou definitivamente essas alterações.
+-- O registro 7 foi inserido e seu MENOR_PRECO foi alterado de 51.00 para 32.00. O COMMIT salvou definitivamente essas alterações.
 -- O registro 8 foi inserido, mas foi removido pelo ROLLBACK.
 -- Portanto, permanecem na tabela os registros 1, 2, 3 e 7.
+SET autocommit = 1;
 
 
 #Exercício 12
@@ -242,7 +228,8 @@ WHERE c.cd_codigo IN (102, 103);
 
 
 #Exercício 16
--- Listar (um único resultado) os autores (código autor, nome autor) com código menor que 10 e as músicas (código música, nome musica) com código menor que 15. (Utilizar UNION).
+-- Listar (um único resultado) os autores (código autor, nome autor) com código menor que 10 e as músicas
+-- (código música, nome musica) com código menor que 15. (Utilizar UNION).
 
 SELECT aut_codigo AS codigo,
        aut_nome AS nome
