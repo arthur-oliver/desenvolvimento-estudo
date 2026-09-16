@@ -1,5 +1,5 @@
 #PRÁTICA 03
-#NOME: Arthur Óliver Rossi Alves - DSM2
+#NOME: Arthur Óliver Rossi Alves - DSM2 
 
 use catalogo;
 
