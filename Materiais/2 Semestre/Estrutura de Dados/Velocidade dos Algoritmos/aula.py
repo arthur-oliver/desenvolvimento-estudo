@@ -42,7 +42,6 @@ print(n)
 01234567 troca 4 com 5
 01234567 troca 5 com 5
 01234567 troca 6 com 6
-01234567 troca 7 com 7
 '''
 
 #Seleção é PIOR que inserção, pois percorre o vetor inteiro para cada elemento, mesmo que ele já esteja ordenado.

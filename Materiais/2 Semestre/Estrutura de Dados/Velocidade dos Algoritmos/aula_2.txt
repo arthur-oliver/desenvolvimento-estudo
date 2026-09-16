@@ -1,0 +1,118 @@
+Inserção (algoritmo do baralho):
+Percorra cada elemento da esq para a dir
+Para cada um, insira no lado correto à esq
+
+5 1 2 7 6 0 4 3
+
+5		não faz nada
+15		1 empurra 5
+125		2 empurra 5
+1257		7 não faz nada
+12567		6 empurra 7
+012567		0 empurra 23567
+0124567		4 empurra 567
+01234567	3 empurra 4567
+
+
+5 2 1 3 6 7 0 4
+
+5		não faz nada
+25		2 empurra 5
+125		1 empurra 25
+1235		3 empurra 5
+12356		6 não faz nada
+123567		7 não faz nada
+0123567		0 empurra 123567
+01234567	4 empurra 567
+
+---------------------------------------------------
+
+Seleção: 
+Percorre todo mundo da esq para a dir
+Para cada um vê  o menor até o fim, e troca o atual
+
+2 0 5 7 3 1 6 4
+
+02573164		troquei 0 com 2
+01573264		troquei 1 com 2
+01273564		troquei 2 com 5
+01237564		troquei 3 com 7
+01234567		troquei 4 com 7
+01234567		troquei 5 com 5
+01234567		troquei 6 com 6
+
+5 1 2 7 6 0 4 3
+
+01276543		troquei 0 com 5
+01276543		troquei 1 com 1
+01276543		troquei 2 com 2
+01236547		troquei 3 com 7
+01234567		troquei 4 com 6
+01234567		troquei 5 com 5
+01234567		troquei 6 com 6
+
+5 2 1 3 6 7 0 4
+
+02136754		troquei 0 com 5
+01236754		troquei 1 com 2
+01236754		troquei 2 com 2
+01236754		troquei 3 com 3
+01234756		troquei 4 com 6
+01234576		troquei 5 com 7
+01234567		troquei 6 com 7
+
+---------------------------------------------------
+
+Seleção e Inserção são RUINS
+IDEIA: dividir o vetor no meio (é preciso saber juntar para algoritmo de ordenação depois que dividir)
+ESTRATÉGIA: Dividir para Conquistar
+Também chamado de "Programação Dinâmica"
+
+EXEMPLO:
+Sejam duas fileiras de crianças em ordem de tamanho
+Se eu pegar as duas menores crianças de cada fileira e puxar
+para uma fileira nova, no final tenho uma única fileira de crianças em ordem
+
+MARGESORT:
+51276043		dividir em 2
+5127 6043		dividir novamente cada um
+51 27 60 43		dividir novamente cada um
+5 1 2 7 6 0 4 3		tenho 8 vetores ordenados (pois só tem um elemento no vetor - então está em ordem dentro do vetor)
+
+15  27  06  34		tenho 4 vetores ordenados (compara os vetores lado a lado e ordena)
+1257	0346		tenho 2 vetores ordenados (passo a passo abaixo)
+01234567		fez o mesmo processo acima para ordenar
+
+passo a passo (última comparação)
+1 e 0 → 0
+1 e 3 → 1
+2 e 3 → 2
+5 e 3 → 3
+5 e 4 → 4
+5 e 6 → 5
+7 e 6 → 6
+sobra 7 → 7
+
+
+EXEMPLO:
+52136704
+
+5213 6704
+52 13 67 04
+5 2 1 3 6 7 0 4
+25 13 67 04
+1235  0467 (passo a passo)
+01234567
+
+1 e 0 → 0
+1 e 4 → 1
+2 e 4 → 2
+3 e 6 → 3
+5 e 6 → 5
+6 e 7 → 6
+sobra 7 → 7
+
+IMPORTANTE! (Prova): Paralelização do código não pode ser sempre realizada (funções sendo processadas em paralelo) - somente nos casos que são independentes entre elas.
+ANALOGIA: 
+Se preciso cavar uma vala com 10m de "extensão" e tiver ajuda de 5 pessoas (trabalhando em locais independentes) funciona;
+Se preciso cavar uma vala com 10m de "profundidade" e tiver ajuda de 5 pessoas (trabalhando no mesmo local) não funciona.
