@@ -1,0 +1,6 @@
+use rh;
+create table func_log
+(fun_id int,
+ fun_data date,
+ novo_sal varchar(30),
+ msg varchar(150)); 
