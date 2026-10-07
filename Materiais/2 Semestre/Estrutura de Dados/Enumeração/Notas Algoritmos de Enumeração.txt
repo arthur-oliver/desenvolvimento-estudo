@@ -1,12 +1,12 @@
-Alguns problemas são muito difíceis e provavelmente não rem resolução computacional viável: Problema da Mochila; Caixeiro Viajante; Escalonamento de pilotos e comissários, respeitando fusos horários, leis trabalhistas, descansos obrigatórios; Criptografia para Segurança Bancária. São chamados NP-Difíceis e estudamos aproximações para eles, ou tentamos a Força Bruta, quando o tamanho é pequeno.
+Alguns problemas sï¿½o muito difï¿½ceis e provavelmente nï¿½o rem resoluï¿½ï¿½o computacional viï¿½vel: Problema da Mochila; Caixeiro Viajante; Escalonamento de pilotos e comissï¿½rios, respeitando fusos horï¿½rios, leis trabalhistas, descansos obrigatï¿½rios; Criptografia para Seguranï¿½a Bancï¿½ria. Sï¿½o chamados NP-Difï¿½ceis e estudamos aproximaï¿½ï¿½es para eles, ou tentamos a Forï¿½a Bruta, quando o tamanho ï¿½ pequeno.
 
 Enumerar = fazer uma lista de todos os objetos
-Força Bruta ou Backtracking ou Enumeração
+Forï¿½a Bruta ou Backtracking ou Enumeraï¿½ï¿½o
 
-Subconjuntos ou Permutações
+Subconjuntos ou Permutaï¿½ï¿½es
 2**n-1  e n! passos
-Os dois são muito lentos, porém pode ser melhor que nada
-Note que 2**n é muito menor que n! Faça no IDLE para alguns casos a experiência.
+Os dois sï¿½o muito lentos, porï¿½m pode ser melhor que nada
+Note que 2**n ï¿½ muito menor que n! Faï¿½a no IDLE para alguns casos a experiï¿½ncia.
 from math import factorial
 n = 100
 len(str(2**n))               #31
@@ -18,8 +18,8 @@ n = 10000
 len(str(2**n))               #3011
 len(str(factorial(n)))       #Sangra a tela
 Como gerar subconjuntos, para n elementos:
-1. Começando de 1, aumente de 1 em 1, até chegar a n
-2. Quando chegar à n, remover o último, e aumenta de 1 o anterior ao último
+1. Comeï¿½ando de 1, aumente de 1 em 1, atï¿½ chegar a n
+2. Quando chegar ï¿½ n, remover o ï¿½ltimo, e aumenta de 1 o anterior ao ï¿½ltimo
 3. Tente aumentar novamente
 n = 3
 1
@@ -55,7 +55,7 @@ n = 3
 23
 3
 
-Um caso prático de uso para esse algoritmo é o problema das damas do Mago Merlim, como ele sabe que é muito demorado tentar casar as 150 damas, seguindo suas preferências, ele irá procurar algum subconjunto, cujo número de preferidos seja menor, assim o Rei Arthur se convence facilmente de que não vale a pena começar o processamento. Digo que é uma obstrução simples para a meta, isto é um "certificado" simples que me prova que não devo começar.
+Um caso prï¿½tico de uso para esse algoritmo ï¿½ o problema das damas do Mago Merlim, como ele sabe que ï¿½ muito demorado tentar casar as 150 damas, seguindo suas preferï¿½ncias, ele irï¿½ procurar algum subconjunto, cujo nï¿½mero de preferidos seja menor, assim o Rei Arthur se convence facilmente de que nï¿½o vale a pena comeï¿½ar o processamento. Digo que ï¿½ uma obstruï¿½ï¿½o simples para a meta, isto ï¿½ um "certificado" simples que me prova que nï¿½o devo comeï¿½ar.
 n = 5
 1
 12
@@ -89,9 +89,9 @@ n = 5
 45
 5
 
-Permutações, como gerar para n elementos:
+Permutaï¿½ï¿½es, como gerar para n elementos:
 1. Fixe o primeiro, dando vez a todos os elementos
-2. Faça as permutações com n-1 elementos
+2. Faï¿½a as permutaï¿½ï¿½es com n-1 elementos
 n = 2
 12
 21
@@ -133,21 +133,21 @@ n = 4
 4312
 4321
 
-Um caso prático de uso é ver uma possível disposição de cavaleiros em torno da Távola Redonda, de tal forma que cada um é amigo do seu vizinho esquerdo e direito. Note que esse problema, apesar de ser tão demorado quanto o das damas, é substancialmente diferente. Aqui eu não consigo convencer o Rei Arthur a nem começar o processamento. Não existe uma obstrução simples, nem certificado, como no caso das damas. Provavelmente o problema dos cavaleiros não possui uma boa caracterização. Esse problema também é conhecido como problema do Circuito Hamiltoniano, onde começo em um vértice, passando em todos os outros de um grafo, que mostra as amizades entre cavaleiros, sem repetir, e volto para a origem, fechando o circuito. Este problema é relacionado com o Problema do Caixeiro Viajante, onde o vendedor sai de uma cidade origem, passa em todas as cidades do seu circuito, sem repetir, e volta para a cidade de origem.
+Um caso prï¿½tico de uso ï¿½ ver uma possï¿½vel disposiï¿½ï¿½o de cavaleiros em torno da Tï¿½vola Redonda, de tal forma que cada um ï¿½ amigo do seu vizinho esquerdo e direito. Note que esse problema, apesar de ser tï¿½o demorado quanto o das damas, ï¿½ substancialmente diferente. Aqui eu nï¿½o consigo convencer o Rei Arthur a nem comeï¿½ar o processamento. Nï¿½o existe uma obstruï¿½ï¿½o simples, nem certificado, como no caso das damas. Provavelmente o problema dos cavaleiros nï¿½o possui uma boa caracterizaï¿½ï¿½o. Esse problema tambï¿½m ï¿½ conhecido como problema do Circuito Hamiltoniano, onde comeï¿½o em um vï¿½rtice, passando em todos os outros de um grafo, que mostra as amizades entre cavaleiros, sem repetir, e volto para a origem, fechando o circuito. Este problema ï¿½ relacionado com o Problema do Caixeiro Viajante, onde o vendedor sai de uma cidade origem, passa em todas as cidades do seu circuito, sem repetir, e volta para a cidade de origem.
 
 Entrar na pasta EP2 do bit.ly barra PythonED
 Abrir Merlim.py
 
-Tire os comentários das permutações e rode
-Depois volte os comentários
-Tire os comentários das enumerações e rode
+Tire os comentï¿½rios das permutaï¿½ï¿½es e rode
+Depois volte os comentï¿½rios
+Tire os comentï¿½rios das enumeraï¿½ï¿½es e rode
 
-Conclusões:
-1) Em termos de tempo enumerações é muito melhor
-2) E principalmente, o problema das Damas é melhor, pois eu consigo convencer o Rei Arthur a nem começar a rodar
+Conclusï¿½es:
+1) Em termos de tempo enumeraï¿½ï¿½es ï¿½ muito melhor
+2) E principalmente, o problema das Damas ï¿½ melhor, pois eu consigo convencer o Rei Arthur a nem comeï¿½ar a rodar
 Enquanto que o problemas dos Cavaleiros, vou ter que ficar a eternidade rodando
 
 
-Um caso interessante real: um determinado semestre foi proposto um Projeto Desafio pela Visiona, envolvia um TILE Dinâmico, que é algo comum nos sites de E-Commerce (carrossel de fotos na primeira página). O projeto foi iniciado, porém, as imagens que a Visiona tinha eram de satélite, com gigabytes de tamanho. Não foi viável fazer Tile Dinâmico com imagens assim. Uma solução é reduzir o tamanho da imagem via um algoritmo de agrupamento, como o K-means. Assim uma imagem gigante pode ser apresentada com agrupamentos médios de porções da imagem original. 
+Um caso interessante real: um determinado semestre foi proposto um Projeto Desafio pela Visiona, envolvia um TILE Dinï¿½mico, que ï¿½ algo comum nos sites de E-Commerce (carrossel de fotos na primeira pï¿½gina). O projeto foi iniciado, porï¿½m, as imagens que a Visiona tinha eram de satï¿½lite, com gigabytes de tamanho. Nï¿½o foi viï¿½vel fazer Tile Dinï¿½mico com imagens assim. Uma soluï¿½ï¿½o ï¿½ reduzir o tamanho da imagem via um algoritmo de agrupamento, como o K-means. Assim uma imagem gigante pode ser apresentada com agrupamentos mï¿½dios de porï¿½ï¿½es da imagem original. 
 Veja Example 2: k-Means for Color Compression no link abaixo:
 https://github.com/jakevdp/PythonDataScienceHandbook/blob/master/notebooks/05.11-K-Means.ipynb
