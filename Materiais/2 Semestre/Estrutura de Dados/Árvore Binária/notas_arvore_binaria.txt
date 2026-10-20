@@ -1,0 +1,52 @@
+�rvores Bin�rias
+
+OBS: Melhor que busca binára para inserção e remoção de elementos (especialmente nos extremos).
+
+�rvore em Computa��o � de ponta cabe�a, raiz encima e galhos embaixo
+Bin�ria porque cada n� tem no m�ximo dois galhos
+
+
+Existe uma �rvore especial, chamada �rvore Bin�ria de BUSCA, onde todos os n�s da direita s�o maiores ou iguais no conte�do e todos os n�s da esquerda s�o menores ou iguais no conte�do, isso vale para qualquer n� (vide imagem que postei no Teams)
+Se eu baixar todos os n�s na vertical, vou ter um VETOR ORDENADO
+Para BUSCA, se tenho uma �rvore de busca, a cada passo jogo fora metade da �rvore, porque essa estrutura permite dividir o mundo em dois, a cada passo. Ou seja vou gastar log(n, 2) passos para achar qualquer n�mero
+Parto da raiz e se for maior, jogo fora metade da esq. e assim por diante a cada passo, sempre jogando fora metade
+
+
+Para BUSCA isso � igualzinho Busca Bin�ria num vetor ordenado, a diferen�a � que a Estrutura de Dados � diferente, uma �rvore bin�ria, implementada com ponteiros
+
+
+Se estou ensinando uma Estrutura nova � que a Busca Bin�ria num vetor ordenado deve ter alguma limita��o...
+
+
+Em programa��o n�o podemos ver uma �nica opera��o, no caso busca!! Temos que ver inser��o e remo��o de elementos tamb�m
+Um vetor ordenado para busca � r�pido, mas ser� que � r�pido para inserir ou remover elementos???????
+� ruim principalmente para inserir ou remover no in�cio, preciso empurrar todo mundo, e tanto faz se o vetor est� ordenado ou n�o
+
+
+A �rvore � implementada por ponteiros, ponteiro para esq. e ponteiro para a direita, ent�o, remover ou inserir � muito melhor!
+Assim, tenho para busca efici�ncia e tamb�m para inserir ou remover. Veja no desenho que para remover o zero, n�o preciso mover ningu�m na �rvore. 
+
+
+�rvore bin�ria de busca � a base para criar o �NDICE dos Bancos de Dados. Em ingl�s conhecido como BST Binary Search Tree.
+
+
+Por incr�vel que pare�a, � eficaz n�o s� para inserir e remover no in�cio. Se remover a raiz � r�pido reorganizar a �rvore, mas n�o veremos esse algoritmo.
+
+
+Por �ltimo, existe um caso, onde acabo gastando muito mais para buscar, onde para cada n� tenho apenas um galho de um dos lados
+
+
+1
+ \
+  2
+   \
+    3
+     \
+      4
+       \
+        5
+         \
+          6
+
+
+Igualzinho o pior caso do Quicksort, da mesma maneira � um caso raro, em geral os algoritmos para �rvores conseguem gerar �rvores razoavelmente balanceadas, isto � sem galhos de um lado apenas, ou seja, uma �rvore que s� tem galhos de um lado � algo raro
